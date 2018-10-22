@@ -359,33 +359,48 @@
   }
 
   .protocol-carousel {
-    border-top: 2px solid #aadff5;
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.33%);
-    }
-    
-    .carousel-inner .carousel-item-left.active, 
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.33%)
-    }
-      
-    .carousel-inner .carousel-item-right,
-    .carousel-inner .carousel-item-left{ 
-      transform: translateX(0);
-    }
 
-    .carousel-control-next, .carousel-control-prev {
-      opacity: 1;
-      width:auto;
+    .container{
+      border-top: 2px solid #aadff5;
+
+      .owl-carousel {
+        padding: 25px 0;
+  
+        .owl-nav {
+          button{
+            outline: none;
+          }
+          .owl-prev {
+            position: absolute;
+            left: -28px;
+            top: 25px;
+            color: #fd6603;
+            width: 5px;
+            font-weight: bold;
+            font-size: 40px;
+          }
+          .owl-next {
+            position: absolute;
+            right: -20px;
+            top: 25px;
+            color: #fd6603;
+            width: 5px;
+            font-weight: bold;
+            font-size: 40px;
+          }
+  
+          &.disabled{
+            display: block; 
+          }
+        }
+        .owl-dots{
+          display:none;
+        }
+      }
+      
     }
-    
-    .left-right-arrow {
-      color: #fd6603;
-      width: 5px;
-      font-weight: bold;
-      font-size: 20px;
-    }
+   
+  
   }
 }
 
@@ -452,36 +467,28 @@
 
 //connect specifications page
 .connect-specification {
-  .left-wrapper{
-    h6{
-      margin: 12px 0;
-      color:#376596;
-      font-weight: bold;
-    }
-    .all-protocols{
-      border-width: 1px 0 1px 0;
-      border-style: solid;
-      border-color: #aadff5;
-
-      i{
-        margin: 0 5px 0 0;
-      }
-    }
+  h2 {
+    display: inline-block;
+    color: rgb(55, 101, 150);
+    font-weight: bold;
+    margin-top: 8px;
+    padding: 15px 0px;
   }
-  .right-wrapper{
-    .img-quickserver{
-      img{
-        border-radius: 10px;
-      }
-    }
-    .img-desc{
-      width: 260px;
-
-      h6{
-        margin: 25px 0;
-        font-weight: bold;
-        color:#376596;
-      }
+  h6 {
+    color:#376596;
+    font-weight: bold;
+  }
+  .table-bordered {
+    border: 1px solid #376596;
+  }
+  .table {
+    
+    th, td {
+      text-align: center;
+      color: #4d4f50;
+      font-weight: normal;
+      font-size: 14px;
+      border: 2px solid #376596;
     }
   }
 }

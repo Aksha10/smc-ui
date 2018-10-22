@@ -36,6 +36,8 @@ $(document).ready(function () {
     $(this).find('.font-icon i').toggleClass('fa-plus-circle fa-minus-circle');
   })
 
+
+
   // =========================================================
   // Add tab href to page URL
   // =========================================================
@@ -128,10 +130,19 @@ $(document).ready(function () {
     $(this).parent().next('span').hide();
   });
 
-  $('#recipeCarousel').carousel({
-    interval: 1000,
-    slidesToScroll: 1
-  })
+  // =========================================================
+  // Carousel
+  // =========================================================
+
+  var owl = $('.owl-carousel');
+  owl.owlCarousel({
+    items: 8,
+    margin: 8,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true
+  });
 
 });
 
@@ -139,10 +150,10 @@ $(document).ready(function () {
 // Apply height to wrapper
 // =========================================================
 
-// function setHeight() {
-//   var documentHeight = $(document).outerHeight(true);
-//   $('.left-wrapper').css('min-height', documentHeight);
-// };
+function setHeight() {
+  var documentHeight = $(document).outerHeight(true);
+  $('.left-wrapper').css('min-height', documentHeight);
+};
 
 // =========================================================
 // Page scroll position to top at page refresh
