@@ -3,7 +3,7 @@ $(document).ready(function () {
   $("html,body").animate({ scrollTop: 0 });
 
   activeTab();
-  setHeight();
+  // setHeight();
 
   // =========================================================
   // Add and Remove active class on hover of super nav
@@ -35,8 +35,6 @@ $(document).ready(function () {
   $('.btn-link').on('click', function () {
     $(this).find('.font-icon i').toggleClass('fa-plus-circle fa-minus-circle');
   })
-
-
 
   // =========================================================
   // Add tab href to page URL
@@ -121,7 +119,7 @@ $(document).ready(function () {
     var $this = $('.header .secondary-nav nav ul li a.active');
     $this.parent().prev('span').hide();
     $this.parent().next('span').hide();
-    setHeight();
+    // setHeight();
   }
 
   $('.header .secondary-nav nav ul li a').on('click', function () {
@@ -143,6 +141,38 @@ $(document).ready(function () {
     autoplayTimeout: 3000,
     autoplayHoverPause: true
   });
+
+  // =========================================================
+  // Toggle search box on click
+  // =========================================================
+
+  $(".header .super-nav .container .search-wrap").on('click', function () {
+    $(".header .super-nav .container .search-box").slideToggle();
+    $(".arrow").toggleClass("fa-angle-down fa-angle-up")
+    $(".header .super-nav .container .search-box").toggleClass("display");
+    if ($(".header .super-nav .container .search-box").hasClass("display")) {
+      if ($(window).width() <= 991) {
+        $(".tab-dropdown").animate({ marginTop: 55 })
+        $(".main-container").animate({ marginTop: 170 })
+      }
+    } else {
+      if ($(window).width() <= 991) {
+        $(".tab-dropdown").animate({ marginTop: 5 })
+        $(".main-container").animate({ marginTop: 115 })
+      } else {
+        $(".main-container").animate({ marginTop: 145 })
+      }
+    }
+  })
+
+  $(".header .super-nav .container .toggle-menu").on('click', function () {
+    $(".menu-tab").slideToggle('slow');
+  })
+
+  $(".header .super-nav .container .menu-tab .close-menu").on('click', function () {
+    $(".menu-tab").slideToggle('slow');
+  })
+
 
 });
 
@@ -178,5 +208,6 @@ function activeTab() {
     $('.secondary-nav .nav a[href="' + activeTab + '"]').tab('show');
   }
 }
+
 
 

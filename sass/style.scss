@@ -6,15 +6,29 @@
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 999;
   .super-nav{
     .container{
+      .toggle-menu {
+        display:none;
+      }
       .logo{
         display:inline-block;
         width: 140px;
       }
+      .search-wrap {
+        display: none;
+      }
+
       .menu-tab{
         display:inline-block;
         padding: 0 31px;
+        .smc-logo {
+          display:none;
+        }
+        .close-menu {
+          display:none;
+        }
         .menu{
           margin-bottom: 0;
           font-size: 0;
@@ -164,7 +178,7 @@
             &.active{
               background-color: #fff;
               color: gray;
-              padding: 2px 10px 11px 10px;
+              padding: 2px 10px 12px 10px;
               border-width: 2px 2px 0 2px;
               border-style: solid;
               border-color: #85b9ce;
@@ -184,6 +198,9 @@
         }
       }
     }
+  }
+  .tab-dropdown {
+    display: none;
   }
   .breadcrumb-wrap{
     nav{
@@ -227,7 +244,8 @@
     border-right: 2px solid #aadff5;
     h2{
       display:inline-block;
-      color: #376596;
+      text-align: left;
+      color: #2b5077;
       font-weight: bold;
       padding: 15px 0;
       margin-top: 8px;
@@ -240,7 +258,7 @@
   .right-wrapper{
     display:inline-block;
     .img-quickserver{
-      width:323px;
+      width:334px;
       border: 2px solid #aadff5;
       border-radius: 10px;
       margin: 50px 0 0 -13px;
@@ -281,7 +299,7 @@
   .left-wrapper{
     h6{
       display:inline-block;
-      color: #376596;
+      color: #2b5077;
       font-weight: bold;
       padding: 10px 0;
     }
@@ -327,14 +345,12 @@
 .connect-protocol {
   .left-wrapper{
     h6{
-      margin: 12px 0;
-      color:#376596;
+      margin: 0 0;
+      color:#2b5077;
       font-weight: bold;
     }
     .all-protocols{
-      border-width: 1px 0 1px 0;
-      border-style: solid;
-      border-color: #aadff5;
+      padding: 10px 0;
 
       i{
         margin: 0 5px 0 0;
@@ -353,7 +369,7 @@
       h6{
         margin: 25px 0;
         font-weight: bold;
-        color:#376596;
+        color:#2b5077;
       }
     }
   }
@@ -424,6 +440,10 @@
           border-bottom: 1px solid #aadff5;
         }
       }
+
+      .card-body {
+        border-top: 1px solid #aadff5;
+      }
     }
   }
 
@@ -459,7 +479,7 @@
       h6{
         margin: 25px 0;
         font-weight: bold;
-        color:#376596;
+        color:#2b5077;
       }
     }
   }
@@ -469,17 +489,18 @@
 .connect-specification {
   h2 {
     display: inline-block;
-    color: rgb(55, 101, 150);
+    text-align: left;
+    color: #2b5077;
     font-weight: bold;
     margin-top: 8px;
     padding: 15px 0px;
   }
   h6 {
-    color:#376596;
+    color:#2b5077;
     font-weight: bold;
   }
   .table-bordered {
-    border: 1px solid #376596;
+    border: 1px solid #2b5077;
   }
   .table {
     
@@ -488,11 +509,54 @@
       color: #4d4f50;
       font-weight: normal;
       font-size: 14px;
-      border: 2px solid #376596;
+      border: 2px solid #2b5077;
+    }
+
+    .colspan-heading {
+      background-color: #2b5077;
+
+      h6 {
+        color: #fff;
+        margin: 5px 0;
+      } 
+
+    }
+    .rowspan-heading {
+      padding: 0;
+      background-color: #2b5077;
+      max-width: 20px;
+      display: table-cell;
+      vertical-align: middle;
+
+
+      .headingV {
+        transform: rotate(270deg);
+        color: #fff;
+        margin: 5px 0;
+      }
+    }
+  }
+  ul{
+    padding: 0 15px 15px 15px;
+    list-style-type: none;
+
+    li{
+      color: #6c757d;
+      font-size: 15px;
+
+      &::before{
+        content: "\2022";
+        color: #fd6603;
+        font-weight: bold;
+        display: inline-block;
+        width: 16px;
+        margin-left: -16px;
+      }
     }
   }
 }
 
+//footer
 .footer{
   border-top: 2px solid #aadff5;
 
@@ -513,7 +577,7 @@
           }
     
           a{
-            color:#376596;
+            color:#2b5077;
             font-size: 14px;
             vertical-align: middle;  
     
@@ -619,3 +683,4 @@
     }
   }
 }
+

@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-
+  <link href="css/main.css" rel="stylesheet" type="text/css">
 
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
@@ -24,41 +23,65 @@
   <header class="header">
     <div class="super-nav">
       <div class="container">
+        <div class="toggle-menu clearfix">
+          <button class="btn btn-bg" type="button">
+            <i class="fa fa-bars fa-2x"></i>
+          </button>
+        </div>
         <div class="logo">
           <a href=""><img class="img-fluid" src="images/smc-logo.png"></a>
         </div>
+        <div class="search-wrap clearfix">
+          <span><i class="fa fa-search search-icon" aria-hidden="true"></i></span>
+          <span><i class="fa fa-angle-down arrow fa-2x" aria-hidden="true"></i></span>
+        </div>
         <nav class="menu-tab">
+          <span class="smc-logo">
+            <img src="images/logo.png" class="img-fluid">
+          </span>
+          <span class="close-menu clearfix">
+            <button type="button" class="btn btn-bg">
+              <i class="fa fa-bars fa-2x"></i>
+            </button>
+          </span>
           <ul class="menu">
             <li class="submenu">
               <a href="">IIoT-Empower</a>
-              <div class="submenu-wrap">
-                <ul class="menu-item">
-                  <li><a class="active" href="connect-page.html#overview">Overview</a></li>
-                  <li><a href="">FieldServer Products</a></li>
-                  <li><a href="">How It Works</a></li>
-                  <li><a href="">Applications</a></li>
-                  <li><a href="">Partners</a></li>
-                  <li><a href="">How to Purchase</a></li>
-                </ul>
+              <span><i class="fa fa-angle-down arrow" aria-hidden="true"></i></span>
+              <div class="container">
+                <div class="submenu-wrap">
+                  <ul class="menu-item">
+                    <li><a class="active" href="connect-page.html#overview">Overview</a></li>
+                    <li><a href="">FieldServer Products</a></li>
+                    <li><a href="">How It Works</a></li>
+                    <li><a href="">Applications</a></li>
+                    <li><a href="">Partners</a></li>
+                    <li><a href="">How to Purchase</a></li>
+                  </ul>
+                </div>
               </div>
             </li>
             <li class="submenu active">
               <a href="connect-page.html">Connect</a>
-              <div class="submenu-wrap">
-                <ul class="menu-item">
-                  <li><a class="active" href="connect-page.html#overview">Overview</a></li>
-                  <li><a href="">FieldServer Products</a></li>
-                  <li><a href="">How It Works</a></li>
-                  <li><a href="">Automation Protocols</a></li>
-                  <li><a href="">Types of Connected Devices</a></li>
-                  <li><a href="">Applications</a></li>
-                  <li><a href="">Partners</a></li>
-                  <li><a href="">How to Purchase</a></li>
-                </ul>
+              <span><i class="fa fa-angle-down arrow" aria-hidden="true"></i></span>
+              <div class="container">
+                <div class="submenu-wrap">
+                  <ul class="menu-item">
+                    <li><a class="active" href="connect-page.html#overview">Overview</a></li>
+                    <li><a href="">FieldServer Products</a></li>
+                    <li><a href="">How It Works</a></li>
+                    <li><a href="">Automation Protocols</a></li>
+                    <li><a href="">Types of Connected Devices</a></li>
+                    <li><a href="">Applications</a></li>
+                    <li><a href="">Partners</a></li>
+                    <li><a href="">How to Purchase</a></li>
+                  </ul>
+                </div>
               </div>
             </li>
             <li class="submenu">
               <a href="">Protect</a>
+              <span><i class="fa fa-angle-down arrow" aria-hidden="true"></i></span>
               <div class="submenu-wrap">
                 <ul class="menu-item">
                   <li><a class="active" href="connect-page.html#overview">Overview</a></li>
@@ -73,6 +96,7 @@
             </li>
             <li class="submenu">
               <a href="">Customer Care</a>
+              <span><i class="fa fa-angle-down arrow" aria-hidden="true"></i></span>
               <div class="submenu-wrap">
                 <ul class="menu-item">
                   <li><a class="active" href="connect-page.html#overview">Overview</a></li>
@@ -89,7 +113,7 @@
           </ul>
         </nav>
         <div class="search-box">
-          <i class="fa fa-search search-icon" aria-hidden="true"></i>
+          <span><i class="fa fa-search search-icon" aria-hidden="true"></i></span>
           <input type="text" class="search-input" placeholder="Search SMC">
           <button type="button" class="btn btn-bg btn-sm">Search</button>
         </div>
@@ -127,6 +151,23 @@
             </li>
           </ul>
         </nav>
+      </div>
+    </div>
+    <div class="tab-dropdown">
+      <div class="dropdown show">
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <span>OVERVIEW</span>
+          <span><i class="fa fa-angle-down arrow-down fa-2x" aria-hidden="true"></i></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">OVERVIEW</a>
+          <a class="dropdown-item" href="#">FEATURES AND BENEFITS</a>
+          <a class="dropdown-item" href="#">SPECIFICATIONS</a>
+          <a class="dropdown-item" href="#">PROTOCOL DRIVERS</a>
+          <a class="dropdown-item" href="#">RESOURCES</a>
+          <a class="dropdown-item" href="#">BUY NOW</a>
+        </div>
       </div>
     </div>
     <div class="breadcrumb-wrap">
@@ -260,132 +301,184 @@
         <h2>Specifications</h2>
         <h6>Field Connection</h6>
         <table class="table table-sm">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">RS-232</th>
-              <th scope="col">RS-485</th>
-              <th scope="col">RS-422</th>
-              <th scope="col">KNX</th>
-              <th scope="col">M-Bus</th>
-              <th scope="col">Ethernet</th>
-              <th scope="col">LonWorks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">FS-QS-1010</th>
-              <td></td>
-              <td>2</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1011</th>
-              <td></td>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1210</th>
-              <td></td>
-              <td>2</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1220</th>
-              <td>1</td>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1221</th>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1230</th>
-              <td></td>
-              <td>1</td>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1231</th>
-              <td></td>
-              <td>1</td>
-              <td></td>
-              <td>1</td>
-              <td></td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1240</th>
-              <td></td>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td></td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1241</th>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1X50</th>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">FS-QS-1X51</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td>1</td>
-              <td></td>
-            </tr>
-          </tbody>
+          <tr>
+            <td class="colspan-heading" colspan="9" class="text-center">
+              <h6>Interface Connections</h6>
+            </td>
+          </tr>
+          <tr>
+            <td class="rowspan-heading" rowspan="13">
+              <h6 class="headingV">QuickServer</h6>
+            </td>
+          </tr>
+          <tr>
+            <th style="background-color: #2b5077;"></th>
+            <th scope="col">RS-232</th>
+            <th scope="col">RS-485</th>
+            <th scope="col">RS-422</th>
+            <th scope="col">KNX</th>
+            <th scope="col">M-Bus</th>
+            <th scope="col">Ethernet</th>
+            <th scope="col">LonWorks</th>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1010</th>
+            <td></td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1011</th>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1210</th>
+            <td></td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1220</th>
+            <td>1</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1221</th>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1230</th>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1231</th>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1240</th>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1241</th>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1X50</th>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">FS-QS-1X51</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+            <td></td>
+          </tr>
         </table>
 
+        <div class="row">
+          <div class="col">
+            <h6>Environment</h6>
+            <ul>
+              <li>
+                Operating temperature
+              </li>
+              <li>
+                Relative humadity
+              </li>
+            </ul>
+            <h6>Communication</h6>
+            <ul>
+              <li>
+                Baud: 4800, 9600, 19200, 38400, 57600, 115200
+              </li>
+              <li>
+                Start Bit: 7:8
+              </li>
+              <li>
+                Start Bit: 1:2
+              </li>
+              <li>
+                Party: Even, Odd, None
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h6>Physical Dimensions</h6>
+            <ul>
+              <li>
+                H x W x D: 5.05 x 2.91 x 1.6
+              </li>
+              <li>
+                Weight: 0.4 lbs(0.2kg)
+              </li>
+            </ul>
+            <h6>LonMark Certification on the QuickServer</h6>
+            <ul>
+              <li>
+                SPID: 80:00:95:46:00:84:04:01
+              </li>
+              <li>Profiles</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <!-- connect specification end -->
@@ -406,9 +499,28 @@
             to
             500 data points and optional RS-232 and RS-422 serial outputs, see the Enhanced version.
           </p>
-          <div class="all-protocols">
-            <h6><i class="fa fa-plus-circle" aria-hidden="true"></i>All Protocols</h6>
-          </div>
+          <p>The QuickServer (FS-QS-10XX Series) is a family of high-performance, fully configurable, and
+            cost-effective
+            building and industrial automation IIoT gateways for integrators to easily connect to the cloud and
+            interface
+            devices to networks in commercial buildings, campuses, and industrial facilities. The QuickServer
+            supports
+            up
+            to 250 data points and can connect to serial, Ethernet, and/or LonWorks Free Topology (FT) links. For up
+            to
+            500 data points and optional RS-232 and RS-422 serial outputs, see the Enhanced version.
+          </p>
+          <p>The QuickServer (FS-QS-10XX Series) is a family of high-performance, fully configurable, and
+            cost-effective
+            building and industrial automation IIoT gateways for integrators to easily connect to the cloud and
+            interface
+            devices to networks in commercial buildings, campuses, and industrial facilities. The QuickServer
+            supports
+            up
+            to 250 data points and can connect to serial, Ethernet, and/or LonWorks Free Topology (FT) links. For up
+            to
+            500 data points and optional RS-232 and RS-422 serial outputs, see the Enhanced version.
+          </p>
         </div>
         <div class="right-wrapper clearfix">
           <div class="img-quickserver">
