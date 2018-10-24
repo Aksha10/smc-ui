@@ -1,5 +1,6 @@
 @media only screen and (max-width: 1199px) {
   .header {
+    box-shadow: none;
     .super-nav {
       .container {
         .logo{
@@ -140,7 +141,7 @@
           cursor: pointer;
           display: inline-block;
           float:right;
-          padding: 12px 10px 11px 25px;
+          padding: 12px 10px 12px 25px;
           border-width: 0 0 0 2px;
           border-style: solid;
           -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from(#7da1af), to(#fff)) 1 100%;
@@ -183,7 +184,7 @@
         .toggle-menu {
           display:inline-block;
           float: left;
-          padding: 7px 25px 4px 10px;
+          padding: 7px 25px 5px 10px;
           border-width: 0 2px 0 0px;
           border-style: solid;
           -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from(#7da1af), to(#fff)) 1 100%;
@@ -209,10 +210,11 @@
     .tab-dropdown {
       display: block;
       position: absolute;
-      top: 75px;
+      top: 59px;
       left: 0;
       right: 0;
-      margin: 0 15px;
+      padding: 12px 15px;
+      background-color: #fff;
 
       a {
         border: 2px solid #aadff5;

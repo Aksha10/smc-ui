@@ -1,59 +1,63 @@
 @media only screen and (max-width: 1199px) {
-  /* line 5, ../sass/responsive.scss */
+  /* line 2, ../sass/responsive.scss */
+  .header {
+    box-shadow: none;
+  }
+  /* line 6, ../sass/responsive.scss */
   .header .super-nav .container .logo {
     width: 120px;
   }
-  /* line 8, ../sass/responsive.scss */
+  /* line 9, ../sass/responsive.scss */
   .header .super-nav .container .search-box {
     display: inline-block;
   }
-  /* line 10, ../sass/responsive.scss */
+  /* line 11, ../sass/responsive.scss */
   .header .super-nav .container .search-box .search-icon {
     top: 24px;
   }
-  /* line 14, ../sass/responsive.scss */
+  /* line 15, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab {
     padding: 0 10px;
   }
-  /* line 18, ../sass/responsive.scss */
+  /* line 19, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li {
     padding: 17px 15px;
   }
 
-  /* line 26, ../sass/responsive.scss */
+  /* line 27, ../sass/responsive.scss */
   .main-container {
     margin-top: 145px;
   }
-  /* line 29, ../sass/responsive.scss */
+  /* line 30, ../sass/responsive.scss */
   .main-container .left-wrapper {
     padding-right: 73px;
   }
-  /* line 34, ../sass/responsive.scss */
+  /* line 35, ../sass/responsive.scss */
   .main-container .right-wrapper .img-quickserver {
     width: 282px;
   }
-  /* line 38, ../sass/responsive.scss */
+  /* line 39, ../sass/responsive.scss */
   .main-container .right-wrapper .img-desc {
     width: 249px;
   }
 }
 @media only screen and (max-width: 991px) {
-  /* line 46, ../sass/responsive.scss */
+  /* line 47, ../sass/responsive.scss */
   .container {
     max-width: 991px;
     text-align: center;
   }
 
-  /* line 51, ../sass/responsive.scss */
+  /* line 52, ../sass/responsive.scss */
   .header {
     z-index: 1;
   }
-  /* line 55, ../sass/responsive.scss */
+  /* line 56, ../sass/responsive.scss */
   .header .super-nav .container {
     position: relative;
     text-align: center;
   }
-  /* line 58, ../sass/responsive.scss */
+  /* line 59, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab {
     display: none;
     position: absolute;
@@ -66,94 +70,94 @@
     text-align: left;
     z-index: 999;
   }
-  /* line 70, ../sass/responsive.scss */
+  /* line 71, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .smc-logo {
     display: inline-block;
     width: 175px;
     padding: 17px 0 17px 18px;
   }
-  /* line 75, ../sass/responsive.scss */
+  /* line 76, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .close-menu {
     display: inline-block;
     float: right;
   }
-  /* line 79, ../sass/responsive.scss */
+  /* line 80, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .close-menu .btn-bg {
     padding: 15px;
     outline: none;
     background: transparent;
     border: none;
   }
-  /* line 85, ../sass/responsive.scss */
+  /* line 86, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .close-menu .btn-bg i {
     color: #fd6603;
   }
-  /* line 92, ../sass/responsive.scss */
+  /* line 93, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li {
     display: block;
     border-width: 2px 0 0 0;
     border-style: solid;
     border-color: #fd6603;
   }
-  /* line 98, ../sass/responsive.scss */
+  /* line 99, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li .arrow {
     font-size: 32px;
     float: right;
     color: #fd6603;
     cursor: pointer;
   }
-  /* line 105, ../sass/responsive.scss */
+  /* line 106, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li a {
     color: #fff;
     font-size: 23px;
     font-weight: normal;
   }
-  /* line 111, ../sass/responsive.scss */
+  /* line 112, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li:last-child {
     border: 0;
   }
-  /* line 115, ../sass/responsive.scss */
+  /* line 116, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li.active {
     background-color: transparent;
   }
-  /* line 117, ../sass/responsive.scss */
+  /* line 118, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li.active a {
     color: #fff;
   }
-  /* line 122, ../sass/responsive.scss */
+  /* line 123, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li:hover {
     background-color: transparent;
   }
-  /* line 124, ../sass/responsive.scss */
+  /* line 125, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li:hover a {
     color: #fff;
   }
-  /* line 130, ../sass/responsive.scss */
+  /* line 131, ../sass/responsive.scss */
   .header .super-nav .container .menu-tab .menu li.submenu:hover .submenu-wrap {
     display: none;
   }
-  /* line 139, ../sass/responsive.scss */
+  /* line 140, ../sass/responsive.scss */
   .header .super-nav .container .search-wrap {
     cursor: pointer;
     display: inline-block;
     float: right;
-    padding: 12px 10px 11px 25px;
+    padding: 12px 10px 12px 25px;
     border-width: 0 0 0 2px;
     border-style: solid;
     -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from(#7da1af), to(#fff)) 1 100%;
   }
-  /* line 148, ../sass/responsive.scss */
+  /* line 149, ../sass/responsive.scss */
   .header .super-nav .container .search-wrap .search-icon {
     color: #fd6603;
     margin-left: 0;
     font-size: 30px;
   }
-  /* line 153, ../sass/responsive.scss */
+  /* line 154, ../sass/responsive.scss */
   .header .super-nav .container .search-wrap .arrow {
     display: inline-block;
     color: #fd6603;
   }
-  /* line 159, ../sass/responsive.scss */
+  /* line 160, ../sass/responsive.scss */
   .header .super-nav .container .search-box {
     display: none;
     position: absolute;
@@ -163,54 +167,55 @@
     padding: 0 15px;
     background-color: white;
   }
-  /* line 168, ../sass/responsive.scss */
+  /* line 169, ../sass/responsive.scss */
   .header .super-nav .container .search-box .search-icon {
     top: 8px;
     right: 22px;
   }
-  /* line 173, ../sass/responsive.scss */
+  /* line 174, ../sass/responsive.scss */
   .header .super-nav .container .search-box .search-input {
     width: 100%;
     padding: 4px 0px 4px 15px;
   }
-  /* line 178, ../sass/responsive.scss */
+  /* line 179, ../sass/responsive.scss */
   .header .super-nav .container .search-box button {
     display: none;
   }
-  /* line 183, ../sass/responsive.scss */
+  /* line 184, ../sass/responsive.scss */
   .header .super-nav .container .toggle-menu {
     display: inline-block;
     float: left;
-    padding: 7px 25px 4px 10px;
+    padding: 7px 25px 5px 10px;
     border-width: 0 2px 0 0px;
     border-style: solid;
     -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from(#7da1af), to(#fff)) 1 100%;
   }
-  /* line 192, ../sass/responsive.scss */
+  /* line 193, ../sass/responsive.scss */
   .header .super-nav .container .toggle-menu .btn-bg {
     padding: 6px 0px;
     outline: none;
     background: transparent;
     border: none;
   }
-  /* line 198, ../sass/responsive.scss */
+  /* line 199, ../sass/responsive.scss */
   .header .super-nav .container .toggle-menu .btn-bg i {
     color: #fd6603;
   }
-  /* line 205, ../sass/responsive.scss */
+  /* line 206, ../sass/responsive.scss */
   .header .secondary-nav {
     display: none;
   }
-  /* line 209, ../sass/responsive.scss */
+  /* line 210, ../sass/responsive.scss */
   .header .tab-dropdown {
     display: block;
     position: absolute;
-    top: 75px;
+    top: 59px;
     left: 0;
     right: 0;
-    margin: 0 15px;
+    padding: 12px 15px;
+    background-color: #fff;
   }
-  /* line 217, ../sass/responsive.scss */
+  /* line 219, ../sass/responsive.scss */
   .header .tab-dropdown a {
     border: 2px solid #aadff5;
     width: 100%;
@@ -219,27 +224,27 @@
     font-size: 18px;
     font-weight: bold;
   }
-  /* line 225, ../sass/responsive.scss */
+  /* line 227, ../sass/responsive.scss */
   .header .tab-dropdown a:after {
     display: none;
   }
-  /* line 229, ../sass/responsive.scss */
+  /* line 231, ../sass/responsive.scss */
   .header .tab-dropdown .arrow-down {
     font-size: 32px;
     float: right;
     color: #fd6603;
     cursor: pointer;
   }
-  /* line 237, ../sass/responsive.scss */
+  /* line 239, ../sass/responsive.scss */
   .header .breadcrumb-wrap {
     display: none;
   }
 
-  /* line 242, ../sass/responsive.scss */
+  /* line 244, ../sass/responsive.scss */
   .main-container {
     margin-top: 115px;
   }
-  /* line 245, ../sass/responsive.scss */
+  /* line 247, ../sass/responsive.scss */
   .main-container .left-wrapper {
     padding: 0 0 45px 0;
     float: none;
@@ -249,16 +254,16 @@
     border-right: 0;
     border-bottom: 2px solid #aadff5;
   }
-  /* line 256, ../sass/responsive.scss */
+  /* line 258, ../sass/responsive.scss */
   .main-container .right-wrapper .img-quickserver {
     margin: -13px 0 0 0;
   }
-  /* line 259, ../sass/responsive.scss */
+  /* line 261, ../sass/responsive.scss */
   .main-container .right-wrapper .img-desc {
     text-align: left;
   }
 
-  /* line 269, ../sass/responsive.scss */
+  /* line 271, ../sass/responsive.scss */
   .connect-specification .container {
     text-align: left;
   }
