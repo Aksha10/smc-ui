@@ -9,6 +9,7 @@
   z-index: 999;
   .super-nav{
     .container{
+      
       .toggle-menu {
         display:none;
       }
@@ -49,8 +50,9 @@
               .submenu-wrap{
                 display: none;
                 position: absolute;
-                width: 73%;
-                left: 204px;
+                width: 100%;
+                left: 0;
+                right: 0;
                 background-image: linear-gradient(to right, rgb(28, 32, 39), #2b5077,rgb(28, 32, 39));
                 top: 71px;
                 padding: 15px 25px;
@@ -568,6 +570,12 @@
 
       .link-wrapper{
         display: inline-block;
+        &.floatL {
+          float: left;
+        }
+        &.floatR {
+          float: right;
+        }
         .link-outer{  
           .arrow{
             color:#fd6603;

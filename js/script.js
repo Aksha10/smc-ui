@@ -139,7 +139,18 @@ $(document).ready(function () {
     loop: true,
     autoplay: true,
     autoplayTimeout: 3000,
-    autoplayHoverPause: true
+    autoplayHoverPause: true,
+    responsive: {
+      // 0: {
+      //   items:1,
+      // },
+      991: {
+        items:6,
+      },
+      1024: {
+        items: 8
+      }
+    }
   });
 
   // =========================================================
@@ -165,6 +176,10 @@ $(document).ready(function () {
     }
   })
 
+  // =======================================================
+  // hide and show menu
+  // =========================================================
+
   $(".header .super-nav .container .toggle-menu").on('click', function () {
     $(".menu-tab").slideToggle('slow');
   })
@@ -173,6 +188,19 @@ $(document).ready(function () {
     $(".menu-tab").slideToggle('slow');
   })
 
+  // =======================================================
+  // Display active dropdown item tab text
+  // =======================================================
+
+  $(".dropdown-item").on('click', function () {
+    var itemText = $(this).text();
+    $(".tab-dropdown .dropdown #dropdownMenuLink .text").html(itemText);
+  });
+
+  $(".secondary-nav .nav .nav-item a").on('click', function () {
+    var tabText = $(this).text();
+    $(".tab-dropdown .dropdown #dropdownMenuLink .text").html(tabText);
+  })
 
 });
 
@@ -208,6 +236,18 @@ function activeTab() {
     $('.secondary-nav .nav a[href="' + activeTab + '"]').tab('show');
   }
 }
+
+$(window).resize(function () {
+  // if ($(window).width() <= 767) {
+  //   $(".floatL").removeClass("floatL");
+  //   $(".floatR").removeClass("floatR");
+  // } else {
+  //   $(".floatL").addClass("floatL");
+  //   $(".floatR").addClass("floatR");
+
+  // }
+
+})
 
 
 
