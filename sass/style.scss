@@ -53,33 +53,37 @@
                 width: 100%;
                 left: 0;
                 right: 0;
-                background-image: linear-gradient(to right, rgb(28, 32, 39), #2b5077,rgb(28, 32, 39));
                 top: 71px;
-                padding: 15px 25px;
-                opacity: 0.95;
-  
-                .menu-item{
-                  li{
-                    border-width: 0;
-                    border-style: none;
-                    display:block;
-                    padding: 8px 0;
-                    a{
-                      color:#fff;
-                      font-size: 14px;
+                
+                .container {
+                  background-image: linear-gradient(to right, #1c2027, #2b5077, #1c2027);
+                  padding: 15px 25px;
+                  opacity: 0.95;
 
+                  .menu-item{
+                    li{
+                      border-width: 0;
+                      border-style: none;
+                      display:block;
+                      padding: 8px 0;
+                      a{
+                        color:#fff;
+                        font-size: 14px;
+  
+                        &:hover{
+                          opacity: 0.75;
+                        }
+                        &.active{
+                          color: #64a7d2;
+                        }
+                      }
                       &:hover{
-                        opacity: 0.75;
+                        background-color: transparent;
                       }
-                      &.active{
-                        color: #64a7d2;
-                      }
-                    }
-                    &:hover{
-                      background-color: transparent;
                     }
                   }
                 }
+  
               }
 
               &:hover .submenu-wrap{
@@ -241,7 +245,7 @@
     float:left;
     display:inline-block;
     width: 71%;
-    padding-right: 100px;
+    padding: 0 100px 50px 0;
     text-align: justify;
     border-right: 2px solid #aadff5;
     h2{
@@ -383,6 +387,7 @@
 
       .owl-carousel {
         padding: 25px 0;
+        z-index: 0;
   
         .owl-nav {
           button{
@@ -425,26 +430,63 @@
 //connect resource page
 .connect-resources {
   .left-wrapper {
-    .card{
-      position: static;
-      border:none;
+    // .card{
+    //   position: static;
+    //   border:none;
 
-      .card-header {
-        padding: 3px 0;
-        background-color: transparent;
-        border-width: 1px 0 0 0;
+    //   .card-header {
+    //     padding: 3px 0;
+    //     background-color: transparent;
+    //     border-width: 1px 0 0 0;
+    //     border-style: solid;
+    //     border-color: #aadff5;
+    //   }
+
+    //   &:last-child {
+    //     .card-header {
+    //       border-bottom: 1px solid #aadff5;
+    //     }
+    //   }
+
+    //   .card-body {
+    //     border-top: 1px solid #aadff5;
+    //   }
+    // }
+
+    .accordion {
+      .card {
+        border-width: 0 0 2px 0;
         border-style: solid;
         border-color: #aadff5;
+        color: #2b5077;
       }
+      .card-header {
+        background-color: #fff;
+        border-width: 2px 0 0 0;
+        border-style: solid;
+        border-color: #aadff5;
 
-      &:last-child {
-        .card-header {
-          border-bottom: 1px solid #aadff5;
+        .card-title {
+          font-size: 18px;
+          cursor: pointer;
+        }
+
+        &::after {
+          font-family: 'FontAwesome';  
+          content: "\f068";
+          float: right; 
+        }
+
+        &.collapsed {
+          &:after {
+            content: "\f067"; 
+          }
         }
       }
-
       .card-body {
-        border-top: 1px solid #aadff5;
+        border-top: 2px solid #aadff5;
+        width: 95%;
+        margin: 0px auto;
       }
     }
   }
@@ -563,9 +605,11 @@
   border-top: 2px solid #aadff5;
 
   .container{
+    padding: 0;
     .upper-footer-wrapper{
       width:72%;
       padding: 5px 100px 5px 0;
+      display: block;
       cursor: pointer;
 
       .link-wrapper{
@@ -597,7 +641,9 @@
         }
       }
     }
-
+    .footer-accordian {
+      display: none;
+    }
   }
 
   .expand-view{
@@ -664,7 +710,7 @@
     .footer-links{
       display:inline-block;
       font-size: 13px;
-    
+      float:right;
       a{
         color:#376596;
 
@@ -690,5 +736,6 @@
       }
     }
   }
+
 }
 

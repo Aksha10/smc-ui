@@ -32,7 +32,7 @@
     }
   }
   .main-container {
-    margin-top: 145px;
+    // margin-top: 145px;
 
     .left-wrapper {
       padding-right: 73px;
@@ -94,7 +94,7 @@
   }
 
   .header {
-    z-index: 1;
+    z-index: 999;
     box-shadow: none;
 
     .super-nav {
@@ -139,7 +139,8 @@
               display: block;
               border-width: 2px 0 0 0;
               border-style: solid;
-              border-color: #fd6603;
+              border-color: #103358;
+              -webkit-border-image: 0;
 
               .arrow {
                 font-size: 32px;
@@ -155,7 +156,10 @@
               }
 
               &:last-child {
-                border: 0;
+                border-width: 2px 0 0 0;
+                border-style: solid;
+                border-color: #103358;
+                -webkit-border-image: 0;
               }
 
               &.active {
@@ -208,14 +212,14 @@
         .search-box {
           display: none;
           position: absolute;
-          top: 80px;
+          top: 60px;
           left: 0;
           right: 0;
-          padding: 0 15px;
+          padding: 13px 15px;
           background-color: white;
 
           .search-icon {
-            top: 8px;
+            top: 20px;
             right: 22px;
           }
 
@@ -258,7 +262,7 @@
     .tab-dropdown {
       display: block;
       position: absolute;
-      top: 59px;
+      top: 60px;
       left: 0;
       right: 0;
       padding: 12px 15px;
@@ -286,6 +290,7 @@
         }
   
         .dropdown-menu {
+          top: 114px;
           right:0;
           padding: 0;
           border: 2px solid #aadff5;
@@ -329,6 +334,7 @@
     }
 
     .right-wrapper {
+      margin-bottom: 50px;  
       .img-quickserver {
         margin: -13px 0 0 0;
       }
@@ -353,6 +359,102 @@
       .upper-footer-wrapper {
         width: 100%;
         padding: 5px 0px 5px 0;
+        display: none;
+      }
+      .footer-accordian {
+        display: block;
+        text-align: left;
+
+        .card {
+          border:0;
+
+          .card-header {
+            background-color: #fff;
+            border-bottom: 2px solid #aadff5;
+            padding: 5px 15px;
+
+
+            button {
+              padding: 5px 0;
+              .font-icon {
+                vertical-align: text-top;
+                color: #fd6603;
+              }
+              .accordian-link {
+                font-size: 20px;
+                color: #2b5077;
+              }
+              &.btn-link {
+                &:active, &:focus, &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+
+          .collapse {
+            position: relative;
+            .card-body {
+              
+              background-color: #0c3c61;
+
+              .row{
+                ul{
+                  list-style-type: none;
+                  margin: 16px;
+                  li {
+                    padding: 8px 0;
+                    a {
+                      font-size: 16px;
+                      font-weight: bold;
+                      color: #69b0e6;
+        
+                      &:hover{
+                        text-decoration: none;
+                      }
+                    }
+                  }
+                }
+              }
+  
+              &::before {
+                top: 0;
+                content: '';
+                position: absolute;
+                left: 15px;
+                width: 0;
+                height: 0;
+                z-index: 1;
+                border-top: solid 16px #FFF;
+                border-left: solid 16px transparent;
+                border-right: solid 16px transparent;
+              }
+            }
+          }
+
+         
+        }
+      }
+    }
+    .lower-footer-wrapper {
+      border-top:0;
+      .container {
+        .footer-links  {
+          display:block;
+          float:none;
+          margin-top: 20px;
+        }
+      }
+    }
+    .expand-view {
+      .container {
+
+        &::before {
+          right: 74px;
+        }
+      }
+      &::before {
+        left: 10px;
       }
     }
   }
@@ -373,6 +475,7 @@
     }
   }
 }
+
 
 @media only screen and (max-width: 480px) {
   .main-container {

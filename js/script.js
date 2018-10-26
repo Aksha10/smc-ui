@@ -140,15 +140,38 @@ $(document).ready(function () {
     autoplay: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
+    responsiveClass: true,
+    nav: true,
     responsive: {
-      // 0: {
-      //   items:1,
-      // },
+      0: {
+        items: 4,
+        nav: true,
+        // navText: ['', ''],
+        autoplay: true,
+        loop: true,
+
+      },
       991: {
-        items:6,
+        items: 4,
+        nav: true,
+        // navText: ['', ''],
+        autoplay: true,
+        loop: true,
+
       },
       1024: {
-        items: 8
+        items: 6,
+        nav: true,
+        // navText: ['', ''],
+        autoplay: true,
+        loop: true,
+      },
+      1199: {
+        items: 8,
+        nav: true,
+        // navText: ['', ''],
+        autoplay: true,
+        loop: true,
       }
     }
   });
@@ -161,17 +184,13 @@ $(document).ready(function () {
     $(".header .super-nav .container .search-box").slideToggle();
     $(".arrow").toggleClass("fa-angle-down fa-angle-up")
     $(".header .super-nav .container .search-box").toggleClass("display");
-    if ($(".header .super-nav .container .search-box").hasClass("display")) {
-      if ($(window).width() <= 991) {
+    if ($(window).width() <= 991) {
+      if ($(".header .super-nav .container .search-box").hasClass("display")) {
         $(".tab-dropdown").animate({ marginTop: 55 })
         $(".main-container").animate({ marginTop: 170 })
-      }
-    } else {
-      if ($(window).width() <= 991) {
-        $(".tab-dropdown").animate({ marginTop: 5 })
-        $(".main-container").animate({ marginTop: 115 })
       } else {
-        $(".main-container").animate({ marginTop: 145 })
+        $(".tab-dropdown").animate({ marginTop: 0 })
+        $(".main-container").animate({ marginTop: 115 })
       }
     }
   })
@@ -194,12 +213,27 @@ $(document).ready(function () {
 
   $(".dropdown-item").on('click', function () {
     var itemText = $(this).text();
+    var itemHref = $(this).attr("href");
     $(".tab-dropdown .dropdown #dropdownMenuLink .text").html(itemText);
   });
 
   $(".secondary-nav .nav .nav-item a").on('click', function () {
     var tabText = $(this).text();
     $(".tab-dropdown .dropdown #dropdownMenuLink .text").html(tabText);
+  })
+
+  // =======================================================
+  // Keep same dropdown item text on refresh
+  // =======================================================
+
+  var windowHref = window.location.hash;
+  console.log(windowHref)
+  $('.dropdown-menu a').each(function () {
+    var dropdownHref = $(this).attr('href');
+    var dropdownText = $(this).text();
+    if (windowHref == dropdownHref) {
+      $(".dropdown-toggle .text").html(dropdownText)
+    }
   })
 
 });
@@ -238,15 +272,19 @@ function activeTab() {
 }
 
 $(window).resize(function () {
-  // if ($(window).width() <= 767) {
-  //   $(".floatL").removeClass("floatL");
-  //   $(".floatR").removeClass("floatR");
-  // } else {
-  //   $(".floatL").addClass("floatL");
-  //   $(".floatR").addClass("floatR");
+  if ($(window).width() > 991) {
+    $(".header .super-nav .container .menu-tab").css("display", "inline-block");
+    $(".header .super-nav .container .search-box").css("display", "inline-block");
+  } else {
+    $(".header .super-nav .container .menu-tab").css("display", "none");
+    $(".header .super-nav .container .search-box").css("display", "none");
+  }
 
-  // }
-
+  if ($(window).width() > 991) {
+    $(".main-container").css("margin-top", "145px")
+  } else {
+    $(".main-container").css("margin-top", "115px")
+  }
 })
 
 
