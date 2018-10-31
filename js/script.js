@@ -260,36 +260,46 @@ $(document).ready(function () {
     $(this).parents(".item-heading").siblings().slideToggle()
   })
 
-  //=======================================================
-  //  Onclick of item-heading class show submenu-item-wrap div
-  //=======================================================
+
+  //===========================================================
+  // on hover display submenu-item-wrap 
+  //===========================================================
 
   if ($(window).width() > 991) {
-    $(".item-heading").on('click', function () {
-      $(this).toggleClass("block");
-      $(this).each(function () {
-        if ($(this).hasClass("block")) {
-          $(this).siblings().css("display", "block")
-        } else {
-          $(this).siblings().css("display", "none")
-          $(this).hover(function () {
-            $(this).siblings().css("display", "block")
-          }, function () {
-            $(this).siblings().css("display", "none")
-          })
-        }
-      })
-    })
 
-    $(".menu-wrapper").hover(function () {
-      $(this).children(".submenu-wrap").css("display", "none")
-      // $(this).find(".menu-item").css("display", "block")
-    }, function () {
-      $(this).children(".submenu-wrap").css("display", "none")
-      // $(this).find(".menu-item").css("display", "none")
-    })
+    onHover();
   }
 
+
+  //===========================================================
+  // on hover show submenu-item-wrap 
+  //===========================================================
+
+  $(".item-heading").on('click', function () {
+    $(".item-heading").removeClass("menu-display")
+    $(".submenu-item-wrap").removeClass("submenu-display")
+    $(this).addClass("menu-display")
+    $(this).siblings().addClass("submenu-display");
+    $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("overview-active")
+    if ($(".active-menu-wrap").hasClass("overview-active")) {
+      $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("d-none")
+    }
+  })
+
+  $(".menu-item li a").on("click", function () {
+    $(this).siblings(".active-menu-wrap").removeClass("overview-active")
+    if ($(".active-menu-wrap").hasClass("overview-active")) {
+      $(this).siblings(".active-menu-wrap").removeClass("d-block");
+    } else {
+      $(this).siblings(".active-menu-wrap").addClass("d-block");
+    }
+  })
+
+  $(".menu-item li a").hover(function () {
+    $(this).siblings(".active-menu-wrap").removeClass("d-none");
+  }, function () {
+    $(this).siblings(".active-menu-wrap").addClass("d-none");
+  })
 });
 
 // =========================================================
@@ -340,45 +350,49 @@ $(window).resize(function () {
     $(".main-container").css("margin-top", "115px")
   }
 
-  //=======================================================
-  //  Onclick of item-heading class show submenu-item-wrap div
-  //=======================================================
-
-  if ($(window).width() > 991) {
-    $(".item-heading").on('click', function () {
-      $(this).toggleClass("block");
-      $(this).each(function () {
-        if ($(this).hasClass("block")) {
-          $(this).siblings().css("display", "block")
-        } else {
-          $(this).siblings().css("display", "none")
-          $(this).hover(function () {
-            $(this).siblings().css("display", "block")
-          }, function () {
-            $(this).siblings().css("display", "none")
-          })
-        }
-      })
-    })
-    $(".menu-wrapper").hover(function () {
-      $(this).children(".submenu-wrap").css("display", "block")
-      $(this).find(".menu-item").css("display", "block")
-    }, function () {
-      $(this).children(".submenu-wrap").css("display", "none")
-      $(this).find(".menu-item").css("display", "none")
-    })
-  } else {
-    $(".item-heading").off('click')
+  if ($(window).width() < 991) {
     $(".item-heading").hover(function () {
-      $(this).siblings().css("display", "none")
+      $(this).siblings().removeClass("d-block")
     })
-    $(".menu-wrapper").hover(function () {
-      $(this).children(".submenu-wrap").css("display", "none")
-      // $(this).find(".menu-item").css("display", "none")
+    $(".item-heading").off('click')
+  } else {
+    onHover();
+
+    $(".item-heading").on('click', function () {
+      $(".item-heading").removeClass("menu-display")
+      $(".submenu-item-wrap").removeClass("submenu-display")
+      $(this).addClass("menu-display")
+      $(this).siblings().addClass("submenu-display");
     })
   }
-
 })
+
+function onHover() {
+  $(".item-heading").hover(function () {
+    $(".active-menu-wrap").addClass("d-none")
+    // $(this).parents(".submenu-item").siblings(".active-menu-wrap").removeClass("overview-active")
+    $(this).siblings().addClass("d-block")
+    $(".submenu-item-wrap").each(function () {
+      if ($(this).hasClass("submenu-display")) {
+        $(this).removeClass("submenu-display")
+      }
+    })
+    if ($(".active-menu-wrap").hasClass("overview-active")) {
+      $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("d-none")
+    }
+  }, function () {
+    $(".active-menu-wrap").removeClass("d-none")
+    $(".item-heading").each(function () {
+      if ($(this).hasClass("menu-display")) {
+        $(this).siblings().addClass("submenu-display")
+      }
+    })
+    $(this).siblings().removeClass("d-block")
+    if ($(".active-menu-wrap").hasClass("overview-active")) {
+      $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("d-none")
+    }
+  })
+}
 
 
 

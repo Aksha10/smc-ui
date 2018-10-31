@@ -111,22 +111,33 @@
                   &:hover{
                     background-color: transparent;
                   }
+
+                  .active-menu-wrap {
+                    width: 80%;
+                    float: right;
+
+                    .active-menu {
+                      li {
+                        display: inline-block;
+                        padding: 0px 50px;
+
+                        a{
+                          color: orange;
+                        }
+                      }
+                    }
+                  }
                 }
 
                 .submenu-item {
                   li{
-                    
                     .item-heading {
                       display: inline-block;
-
-                      &:hover + .submenu-item-wrap {
-                        display: block;
-                      }
                     }
 
                     .submenu-item-wrap {
                       display:none;
-                      border: 1px solid orange;
+                      // border: 1px solid orange;
                       width: 80%;
                       float: right;
   
@@ -143,13 +154,12 @@
                             float: right;
                           }
                         }
-  
                       }
                     }
 
-                    
-                    
-
+                    .submenu-display {
+                      display: block;
+                    }
                   }
                 }
                 

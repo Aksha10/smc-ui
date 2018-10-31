@@ -202,6 +202,16 @@
                           right: 0;
                           top: 0;
                         }
+
+                        .active-menu-wrap {
+                          float:none;
+                          .active-menu {
+                            li {
+                              display: block;
+                              padding: 0 20px;
+                            }
+                          }
+                        }
                       }
                       .submenu-item {
                         display:none;
