@@ -4,6 +4,12 @@ $(document).ready(function () {
 
   activeTab();
 
+  $('.nav-item a').on('click', function () {
+    $('.nav-item').css('padding', "5px 10px")
+    $(this).parent().css("padding", "5px 0")
+  })
+
+
   // =========================================================
   // Add and Remove active class on hover of super nav
   // =========================================================
@@ -225,7 +231,6 @@ $(document).ready(function () {
   // =======================================================
 
   var windowHref = window.location.hash;
-  console.log(windowHref)
   $('.dropdown-menu a').each(function () {
     var dropdownHref = $(this).attr('href');
     var dropdownText = $(this).text();
@@ -265,7 +270,7 @@ $(document).ready(function () {
   }
 
   //===========================================================
-  // on hover show submenu-item-wrap 
+  // on click of item-heading 
   //===========================================================
 
   $(".item-heading").on('click', function () {
@@ -304,6 +309,29 @@ $(document).ready(function () {
       }
     })
   })
+
+  $('.menu-item').mouseleave(function () {
+    $(this).parents(".submenu-wrap").addClass("d-none")
+  })
+
+  if ($(window).width() >= 991) {
+    $(".menu-wrapper").addClass("onhover-wrapper");
+    $(".menu-wrapper").each(function () {
+      if ($(this).hasClass("onhover-wrapper")) {
+        $(".onhover-wrapper").hover(function () {
+          // if ($(window).width() >= 991) {
+          $(this).children(".submenu-wrap").addClass("d-block")
+          // }
+        }, function () {
+          // if ($(window).width() >= 991) {
+          $(this).children(".submenu-wrap").removeClass("d-block")
+          // }
+        })
+      }
+    })
+  } else {
+    $(".menu-wrapper").removeClass("onhover-wrapper");
+  }
 });
 
 // =========================================================
@@ -399,27 +427,32 @@ function overlinkHover() {
 
 $(window).resize(function () {
   if ($(window).width() >= 991) {
-    $(".header .super-nav .container .menu-tab").css("display", "inline-block");
-    $(".header .super-nav .container .search-box").css("display", "inline-block");
+    $(".menu-wrapper").addClass("onhover-wrapper");
 
-    $(".menu-wrapper").hover(function () {
-      $(this).children(".submenu-wrap").removeAttr("style")
-      $(this).find(".submenu-item").removeAttr("style")
-      //   $(this).children(".submenu-wrap").addClass("test")
-      //   $(this).children(".submenu-wrap").css("display", "block")
-      //   $(this).find(".submenu-item").css("display", "block")
-      // }, function () {
-      //   $(this).find(".submenu-wrap").css("display", "none")
+    $(".menu-wrapper").each(function () {
+      if ($(this).hasClass("onhover-wrapper")) {
+        $(".onhover-wrapper").hover(function () {
+          // if ($(window).width() >= 991) {
+          $(this).children(".submenu-wrap").addClass("d-block")
+          $(this).children(".submenu-wrap").removeAttr("style")
+          $(this).find(".submenu-item").removeAttr("style")
+          // }
+        }, function () {
+          // if ($(window).width() >= 991) {
+          $(this).children(".submenu-wrap").removeClass("d-block")
+          // }
+        })
+      }
     })
-  } else {
-    // $(".menu-wrapper").hover(function () {
-
-    // })
-    $(".header .super-nav .container .menu-tab").css("display", "none");
-    $(".header .super-nav .container .search-box").css("display", "none");
+  }
+  else {
+    $(".menu-wrapper").removeClass("onhover-wrapper");
+    //   console.log("resize else mai aya");
   }
 
-  if ($(window).width() > 991) {
+  if ($(window).width() >= 991) {
+    $(".header .super-nav .container .menu-tab").removeAttr("style")
+    $(".header .super-nav .container .search-box").removeAttr("style")
     $(".main-container").css("margin-top", "145px")
   } else {
     $(".main-container").css("margin-top", "115px")

@@ -70,12 +70,6 @@
               border-style: solid;
               -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from(#7da1af), to(#fff)) 1 100%;
             }
-
-            &.menu-wrapper {
-              &:hover .submenu-wrap {
-                display:block;
-              }
-            }
             
           }
           .submenu-wrap{
@@ -88,10 +82,11 @@
             
             .container {
               background-image: linear-gradient(to right, #1c2027, #0c3c61, #1c2027);
-              padding: 15px 15px;
+              padding: 0;
               opacity: 0.95;
 
               .menu-item {
+                padding: 15px;
                 li{
                   border-width: 0;
                   border-style: none;
