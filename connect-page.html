@@ -575,9 +575,10 @@
           </ul>
         </nav>
         <div class="search-box">
-          <span><i class="fa fa-search search-icon" aria-hidden="true"></i></span>
-          <input type="text" class="search-input" placeholder="Search SMC">
-          <button type="button" class="btn btn-bg btn-sm">Search</button>
+          <form>
+            <input type="text" class="search-input" placeholder="Search SMC">
+            <span><i class="fa fa-search search-icon" aria-hidden="true"></i></span>
+          </form>
         </div>
       </div>
     </div>
@@ -762,6 +763,7 @@
       <div class="container">
         <h2>Specifications</h2>
         <h6>Field Connection</h6>
+        <div class="table-responsive">
         <table class="table table-sm">
           <tr>
             <td class="colspan-heading" colspan="9" class="text-center">
@@ -894,6 +896,8 @@
             <td></td>
           </tr>
         </table>
+        </div>
+        
 
         <div class="row">
           <div class="col">
@@ -1026,89 +1030,129 @@
         <div class="left-wrapper clearfix">
           <h2>Resources</h2>
           <div id="accordion" class="accordion">
-            <div class="card mb-0">
-              <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
-                <a class="card-title">
-                  Data Sheets
-                </a>
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <i class="fa" aria-hidden="true"></i>
+                    Data Sheets
+                  </button>
+                </h5>
               </div>
-              <div id="collapseOne" class="card-body collapse" data-parent="#accordion">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                  helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                  butcher vice lomo. Leggings occaecat
-                  craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                  accusamus labore sustainable VHS.
-                </p>
-              </div>
-              <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                <a class="card-title">
-                  Start-Up Guides
-                </a>
-              </div>
-              <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                  helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                  butcher vice lomo. Leggings occaecat
-                  craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                  accusamus labore sustainable VHS.
-                </p>
-              </div>
-              <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                <a class="card-title">
-                  Manuals
-                </a>
-              </div>
-              <div id="collapseThree" class="collapse" data-parent="#accordion">
-                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                  quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. samus labore
-                  sustainable VHS.
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </p>
                 </div>
               </div>
-              <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                <a class="card-title">
-                  Application Notes
-                </a>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fa" aria-hidden="true"></i>
+                    Start-Up Guides
+                  </button>
+                </h5>
               </div>
-              <div id="collapseFour" class="collapse" data-parent="#accordion">
-                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                  quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. samus labore
-                  sustainable VHS.
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </p>
                 </div>
               </div>
-              <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                <a class="card-title">
-                  Case Studies
-                </a>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fa" aria-hidden="true"></i>
+                    Manuals
+                  </button>
+                </h5>
               </div>
-              <div id="collapseFive" class="collapse" data-parent="#accordion">
-                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                  quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. samus labore
-                  sustainable VHS.
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </p>
                 </div>
               </div>
-              <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                <a class="card-title">
-                  Presentations
-                </a>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <i class="fa" aria-hidden="true"></i>
+                    Application Notes
+                  </button>
+                </h5>
               </div>
-              <div id="collapseSix" class="collapse" data-parent="#accordion">
-                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                  quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. samus labore
-                  sustainable VHS.
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingFive">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <i class="fa" aria-hidden="true"></i>
+                    Case Studies
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingSix">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <i class="fa" aria-hidden="true"></i>
+                    Presentations
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1187,20 +1231,19 @@
         </div>
       </div>
       <div class="footer-accordian">
-        <div id="collapse">
-          <div class="card">
-            <div class="card-header" id="linkOne">
-              <h6 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#accordianOne" aria-expanded="false"
-                  aria-controls="accordianOne">
-                  <span class="font-icon"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></span>
+      <div id="footer-accordion" class="foot-accordion">
+        <div class="card">
+          <div class="card-header" id="heading_1">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse_1" aria-expanded="false" aria-controls="collapse_1">
+                <span class="font-icon"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></span>
                   <span class="accordian-link">Resource Center</span>
-                </button>
-              </h6>
-            </div>
-            <div id="accordianOne" class="collapse" aria-labelledby="linkOne" data-parent="#collapse">
-              <div class="card-body">
-                <div class="row">
+              </button>
+            </h5>
+          </div>
+          <div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#footer-accordion">
+            <div class="card-body">
+              <div class="row">
                   <div class="col-sm-6">
                     <ul>
                       <li><a href="#">Data Sheets</a></li>
@@ -1222,22 +1265,21 @@
                     </ul>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="linkTwo">
-              <h6 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#accordianTwo" aria-expanded="false"
-                  aria-controls="accordianTwo">
-                  <span class="font-icon"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></span>
-                  <span class="accordian-link">Company</span>
-                </button>
-              </h6>
-            </div>
-            <div id="accordianTwo" class="collapse" aria-labelledby="linkTwo" data-parent="#collapse">
-              <div class="card-body">
-                <div class="row">
+        </div>
+        <div class="card">
+          <div class="card-header" id="heading_2">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse_2" aria-expanded="false" aria-controls="collapse_2">
+                <span class="font-icon"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></span>
+                <span class="accordian-link">Company</span>
+              </button>
+            </h5>
+          </div>
+          <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#footer-accordion">
+            <div class="card-body">
+              <div class="row">
                   <div class="col-sm-6">
                     <ul>
                       <li><a href="#">Data Sheets</a></li>
@@ -1249,11 +1291,12 @@
                     </ul>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
+      </div>
+      
 
     </div>
     <div class="expand-view">
