@@ -77,6 +77,29 @@
     max-width: 991px;
     text-align: center;
   } 
+  .connect-protocol {
+    .protocol-carousel {
+      .container {
+        .owl-carousel { 
+          padding: 25px 15px;
+          .owl-image {
+            width: 125px;
+            height: auto;
+          }
+          .owl-nav {
+            .owl-prev {
+              top: 25px;
+              left: -6px;
+            }
+            .owl-next {
+              top: 25px;
+              right: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
   .header {
     z-index: 999;
     box-shadow: none; 
@@ -244,7 +267,7 @@
         .search-box {
           display: none;
           position: absolute;
-          top: 59px;
+          top: 60px;
           left: 0;
           right: 0;
           padding: 13px 15px;
@@ -286,10 +309,10 @@
     .tab-dropdown {
       display: block;
       position: absolute;
-      top: 59px;
+      top: 60px;
       left: 0;
       right: 0;
-      padding: 12px 13px;
+      padding: 12px 13px 0;
       background-color: #fff; 
       .dropdown {
         border: 2px solid #aadff5;
@@ -352,6 +375,7 @@
       }
       .img-desc {
         text-align: left;
+        margin-left: 0;
       } 
     }
   } 
@@ -491,3 +515,4 @@
     }
   }
 }
+
