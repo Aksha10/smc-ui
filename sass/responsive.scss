@@ -34,22 +34,6 @@
       }
     }
   } 
-  .connect-protocol { 
-    .protocol-carousel {
-      .container {
-        .owl-carousel {
-          .owl-nav {
-            .owl-next {
-              top: 20px;
-            }
-            .owl-prev {
-              top: 20px;
-            }
-          } 
-        }
-      }
-    } 
-  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -82,17 +66,11 @@
       .container {
         .owl-carousel { 
           padding: 25px 15px;
-          .owl-image {
-            width: 125px;
-            height: auto;
-          }
           .owl-nav {
             .owl-prev {
-              top: 25px;
               left: -6px;
             }
             .owl-next {
-              top: 25px;
               right: 3px;
             }
           }

@@ -20,6 +20,7 @@
       .logo {
         display: inline-block;
         width: 140px;
+        height: 65px;
       }
       .search-wrap {
         display: none;
@@ -38,7 +39,7 @@
           font-size: 0;
           li {
             display: inline-block;
-            padding: 22px 35px;
+            padding: 23px 35px;
             border-width: 0 0 0 2px;
             border-style: solid;
             -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from(#7da1af), to(#fff)) 1 100%;
@@ -69,25 +70,23 @@
             }
           }
           .submenu-wrap{
-            // display: none;
+            display: none;
             position: absolute;
             width: 100%;
             left: 0;
             right: 0;
-            top: 71px;
+            top: 73px;
             
             .container {
               background-image: linear-gradient(to right, #1c2027, #0c3c61, #1c2027);
               padding: 0;
               opacity: 0.95;
               .menu-item {
-                padding: 15px;
                 li {
                   border-width: 0;
                   border-style: none;
                   display: block;
-                  padding: 8px 0;
-                  border: 1px solid red;
+                  padding: 10px 20px;
                   a {
                     color:#fff;
                     font-size: 14px;
@@ -102,17 +101,21 @@
                   &:hover {
                     background-color: transparent;
                   }
-                  // .active-menu-wrap {
+                  .active-menu-wrap {
+                    width: 80%;
+                    float: right;
+
                     .active-menu {
                       li {
                         display: inline-block;
                         padding: 0px 50px;
-                        a {
+
+                        a{
                           color: orange;
                         }
                       }
                     }
-                  // }
+                  }
                 }
                 .hover-menu-item {
                   li {
@@ -121,6 +124,7 @@
                 }
                 .submenu-item {
                   li {
+                    padding: 10px 0;
                     .item-heading {
                       display: inline-block;
                     }
@@ -154,6 +158,8 @@
       .search-box {
         position: relative;
         display: inline-block;
+        float: right;
+        margin-top: 18px;
         .search-icon {
           cursor: pointer;
           position: absolute;
@@ -386,8 +392,11 @@
         padding: 25px 0;
         z-index: 0; 
         .owl-image {
-          width: 125px;
-          height: auto;
+          width: 130px;
+          height: 45px;
+          background-size: contain;
+          background-position: center center;
+          background-repeat: no-repeat;
           margin: 0 auto;
         }
         .owl-nav {
@@ -397,7 +406,7 @@
           .owl-prev {
             position: absolute;
             left: -28px;
-            top: 25px;
+            top: 15px;
             color: #fd6603;
             width: 5px;
             font-weight: bold;
@@ -406,7 +415,7 @@
           .owl-next {
             position: absolute;
             right: -20px;
-            top: 25px;
+            top: 15px;
             color: #fd6603;
             width: 5px;
             font-weight: bold;
@@ -667,8 +676,11 @@
          ul {
            li {
              display:inline-block;
-             width:30px; 
              a {
+              img {
+                width: 30px;
+                height: 30px;
+              }
                &:hover { 
                  opacity: 0.75;
                }
