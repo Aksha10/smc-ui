@@ -20,7 +20,7 @@
       .logo {
         display: inline-block;
         width: 140px;
-        height: 65px;
+        height: 57px;
       }
       .search-wrap {
         display: none;
@@ -101,18 +101,17 @@
                   &:hover {
                     background-color: transparent;
                   }
-                  .active-menu-wrap {
-                    width: 80%;
-                    float: right;
-
-                    .active-menu {
-                      li {
-                        display: inline-block;
-                        padding: 0px 50px;
-
-                        a{
-                          color: orange;
-                        }
+                }
+                .header-main-menu {
+                  li {
+                    a {
+                      &:focus {
+                        color: #64a7d2;
+                      }
+                    }
+                    &:hover {
+                      a {
+                        color: #64a7d2;
                       }
                     }
                   }
@@ -120,36 +119,15 @@
                 .hover-menu-item {
                   li {
                     display: none;
+
+                    a {
+                      color: orange;
+                    }
+                  }
+                  .active-menu {
+                    color: orange;
                   }
                 }
-                .submenu-item {
-                  li {
-                    padding: 10px 0;
-                    .item-heading {
-                      display: inline-block;
-                    }
-                    .submenu-item-wrap {
-                      display: none;
-                      width: 80%;
-                      float: right;
-                      .item-list {
-                        li {
-                          display: inline-block;
-                          padding: 0px 50px;
-                          a {
-                            font-weight: normal;
-                          }
-                          &:last-child {
-                            float: right;
-                          }
-                        }
-                      }
-                    }
-                    .submenu-display {
-                      display: block;
-                    }
-                  }
-                } 
               }
             }
           }

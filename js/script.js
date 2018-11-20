@@ -338,26 +338,44 @@ $(document).ready(function () {
   })
 
   $('.menu-item').mouseleave(function () {
-    $(this).parents(".submenu-wrap").removeClass("d-block")
-    $(".hover-menu-item li").removeClass("d-block")
-    $(".hover-menu-item #overview-links").addClass("d-block")
+    if ($(window).width() >= 991) {
+      $(this).parents(".submenu-wrap").removeClass("d-block")
+      $(".hover-menu-item li").removeClass("d-block")
+      $(".hover-menu-item #overview-links").addClass("d-block")
+      $(".overview-active").addClass("active")
+    }
   })
 
-  $(".hover-menu-item #overview-links").addClass("d-block")
+  if ($(window).width() >= 991) {
+    $(".hover-menu-item #overview-links").addClass("d-block")
+  }
 
   $(".header-main-menu li").hover(function () {
-    var onhoverHref = $(this).children().attr("href").substr(1)
+    if ($(window).width() >= 991) {
+      $(".overview-active").removeClass("active")
+      var onhoverHref = $(this).children().attr("href").substr(1)
 
-    $(".hover-menu-item li").each(function () {
-      var onhoverID = $(this).attr("id")
+      $(".hover-menu-item li").each(function () {
+        var onhoverID = $(this).attr("id")
 
-      if (onhoverHref == onhoverID) {
-        $(this).addClass("d-block")
-      } else {
-        $(this).removeClass("d-block")
-      }
-    })
+        if (onhoverHref == onhoverID) {
+          $(this).addClass("d-block")
+        } else {
+          $(this).removeClass("d-block")
+        }
+      })
+    }
   });
+
+  if ($(window).width() <= 991) {
+    $(".submenu-wrap .menu-item .submenu-item").removeClass("col-sm-4")
+    $(".submenu-wrap .menu-item .submenu-item").addClass("col-sm-12")
+    $(".overview-active").removeClass("active")
+  } else {
+    $(".submenu-wrap .menu-item .submenu-item").removeClass("col-sm-12")
+    $(".submenu-wrap .menu-item .submenu-item").addClass("col-sm-4")
+    $(".overview-active").addClass("active")
+  }
 });
 
 // =========================================================
@@ -443,6 +461,22 @@ function overlinkHover() {
 }
 
 $(window).resize(function () {
+
+  if ($(window).width() >= 991) {
+    $(".hover-menu-item #overview-links").addClass("d-block")
+  } else {
+    $(".hover-menu-item #overview-links").removeClass("d-block")
+  }
+
+  if ($(window).width() <= 991) {
+    $(".submenu-wrap .menu-item .submenu-item").removeClass("col-sm-4")
+    $(".submenu-wrap .menu-item .submenu-item").addClass("col-sm-12")
+    $(".overview-active").removeClass("active")
+  } else {
+    $(".submenu-wrap .menu-item .submenu-item").removeClass("col-sm-12")
+    $(".submenu-wrap .menu-item .submenu-item").addClass("col-sm-4")
+    $(".overview-active").addClass("active")
+  }
 
   if ($(window).width() >= 991) {
     $(".menu-wrapper .submenu-wrap").removeAttr("style")
