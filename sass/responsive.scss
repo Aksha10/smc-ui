@@ -85,6 +85,9 @@
       .container {
         position: relative;
         text-align: center;
+        .search-box {
+          margin-top: 0;
+        }
         .menu-tab {
           display: none;
           position: absolute;
@@ -163,7 +166,7 @@
                     .menu-item { 
                       li {
                         position: relative;
-                        padding: 8px 20px;
+                        padding: 10px 20px;
                         a {
                           font-size: 16px;
                         } 
@@ -184,10 +187,8 @@
                       }
                       .header-main-menu {
                         li {
-                          &:hover {
-                            a {
-                              color: #fff;
-                            }
+                          .active {
+                            color: #69b0e6;
                           }
                         }
                         .angle {
@@ -196,6 +197,17 @@
                           color: #fd6603;
                           cursor: pointer;
                           margin-top: -4px;
+                        }
+                        .mobile-menu-wrapper {
+                          .mobile-menu {
+                            li {
+                              padding: 5px 20px;
+
+                              .active-menu {
+                                color: orange;
+                              }
+                            }
+                          }
                         }
                       }
                       .row {
@@ -300,11 +312,15 @@
           color: #fd6603;
           cursor: pointer;
         } 
+        // .dropdown-head {
+        //   top: 0 !important;
+        // }
         .dropdown-menu {
           top: 114px;
           right:-2px;
           padding: 0;
           border: 2px solid #aadff5; 
+          overflow-y: auto;
           .dropdown-item {
             padding: 10px 15px;
             border-bottom: 2px solid #aadff5; 
@@ -325,7 +341,7 @@
     }
   } 
   .main-container {
-    margin-top: 115px; 
+    margin-top: 122px; 
     .left-wrapper {
       padding: 0 0 45px 0;
       float: none; 

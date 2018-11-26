@@ -144,8 +144,8 @@ $(document).ready(function () {
     margin: 8,
     loop: true,
     dots: false,
-    // autoplay: true,
-    // autoplayTimeout: 3000,
+    autoplay: true,
+    autoplayTimeout: 3000,
     autoplayHoverPause: true,
     responsiveClass: true,
     nav: true,
@@ -153,37 +153,37 @@ $(document).ready(function () {
       0: {
         items: 1,
         nav: true,
-        // autoplay: true,
+        autoplay: true,
       },
       321: {
         items: 2,
         nav: true,
-        // autoplay: true,
+        autoplay: true,
       },
       480: {
         items: 3,
         nav: true,
-        // autoplay: true,
+        autoplay: true,
       },
       640: {
         items: 4,
         nav: true,
-        // autoplay: true,
+        autoplay: true,
       },
       767: {
         items: 5,
         nav: true,
-        // autoplay: true,
+        autoplay: true,
       },
       991: {
         items: 6,
         nav: true,
-        // autoplay: true,
+        autoplay: true,
       },
       1200: {
         items: 8,
         nav: true,
-        // autoplay: true,
+        autoplay: true,
       }
     }
   });
@@ -270,55 +270,6 @@ $(document).ready(function () {
     $(this).parents(".item-heading").siblings().slideToggle()
   })
 
-
-  if ($(window).width() >= 991) {
-    onHover();
-    overlinkHover();
-  }
-
-  //===========================================================
-  // on click of item-heading 
-  //===========================================================
-
-  $(".item-heading").on('click', function () {
-    if ($(window).width() >= 991) {
-      $(".item-heading").removeClass("menu-display")
-      $(".submenu-item-wrap").removeClass("submenu-display")
-      $(this).addClass("menu-display")
-      $(this).siblings().addClass("submenu-display");
-      $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("overview-active")
-      if ($(".active-menu-wrap").hasClass("overview-active")) {
-        $(this).parents(".submenu-item").siblings(".active-menu-wrap").removeClass("d-block")
-      } else {
-        $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("d-block")
-      }
-      $(".overview-link").removeClass("active-link");
-      if ($(".overview-link").hasClass("active-link")) {
-        $(this).siblings(".active-menu-wrap").removeClass("d-block")
-      }
-    }
-  })
-
-  // =========================================================
-  // overview-link on click functionality
-  // =========================================================
-
-  $(".menu-item li .overview-link").on("click", function () {
-    $(this).siblings(".active-menu-wrap").removeClass("overview-active")
-    $(this).addClass("active-link")
-    if ($(".active-menu-wrap").hasClass("overview-active")) {
-      $(this).siblings(".active-menu-wrap").removeClass("d-block");
-    } else {
-      $(this).siblings(".active-menu-wrap").addClass("d-block");
-    }
-    $(".item-heading").each(function () {
-      if ($(this).hasClass("menu-display")) {
-        $(this).removeClass("menu-display")
-        $(this).siblings(".submenu-item-wrap").removeClass("submenu-display")
-      }
-    })
-  })
-
   if ($(window).width() >= 991) {
     $(".menu-wrapper").addClass("onhover-wrapper");
   } else {
@@ -376,6 +327,22 @@ $(document).ready(function () {
     $(".submenu-wrap .menu-item .submenu-item").addClass("col-sm-4")
     $(".overview-active").addClass("active")
   }
+
+  $(".submenu-wrap .header-main-menu .angle").on('click', function () {
+    $(this).parent().next().slideToggle()
+    $(this).parent().prev().toggleClass("active")
+  })
+
+  $(".header .tab-dropdown .dropdown").on('click', function () {
+    if ($(window).height() <= 420) {
+      var windowHeight = $(window).height();
+      var headerHeight = $(".header").height();
+      var dropdownHeight = $(".tab-dropdown").height();
+      var headerDropdown = headerHeight + dropdownHeight;
+      var finalHeight = windowHeight - headerDropdown;
+      $(".header .tab-dropdown .dropdown .dropdown-menu").css({ "max-height": finalHeight, top: '' });
+    }
+  })
 });
 
 // =========================================================
@@ -402,65 +369,18 @@ function activeTab() {
   }
 }
 
-//===========================================================
-// on hover display submenu-item-wrap 
-//===========================================================
-
-function onHover() {
-  $(".item-heading").hover(function () {
-    $(".active-menu-wrap").addClass("d-none")
-    $(this).siblings().addClass("d-block")
-    $(".submenu-item-wrap").each(function () {
-      if ($(this).hasClass("submenu-display")) {
-        $(this).removeClass("submenu-display")
-      }
-    })
-    if ($(".active-menu-wrap").hasClass("overview-active")) {
-      $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("d-none")
-    }
-    if ($(".overview-link").hasClass("active-link")) {
-      $(".overview-link").siblings(".active-menu-wrap").removeClass("d-block")
-    }
-  }, function () {
-    $(".active-menu-wrap").removeClass("d-none")
-    $(".item-heading").each(function () {
-      if ($(this).hasClass("menu-display")) {
-        $(this).siblings().addClass("submenu-display")
-      }
-    })
-    $(this).siblings().removeClass("d-block")
-    if ($(".active-menu-wrap").hasClass("overview-active")) {
-      $(this).parents(".submenu-item").siblings(".active-menu-wrap").addClass("d-none")
-    }
-    if ($(".overview-link").hasClass("active-link")) {
-      $(".overview-link").siblings(".active-menu-wrap").addClass("d-block")
-    }
-  })
-}
-
-// =========================================================
-// overview-link on hover functionality
-// =========================================================
-
-function overlinkHover() {
-  $(".menu-item li .overview-link").hover(function () {
-    $(this).siblings(".active-menu-wrap").removeClass("d-none");
-    $(".item-heading").each(function () {
-      if ($(this).hasClass("menu-display")) {
-        $(this).siblings().removeClass("submenu-display")
-      }
-    })
-  }, function () {
-    $(".item-heading").each(function () {
-      if ($(this).hasClass("menu-display")) {
-        $(this).siblings().addClass("submenu-display")
-      }
-    })
-    $(this).siblings(".active-menu-wrap").addClass("d-none");
-  })
-}
-
 $(window).resize(function () {
+
+  $(".header .tab-dropdown .dropdown").on('click', function () {
+    if ($(window).height() <= 420) {
+      var windowHeight = $(window).height();
+      var headerHeight = $(".header").height();
+      var dropdownHeight = $(".tab-dropdown").height();
+      var headerDropdown = headerHeight + dropdownHeight;
+      var finalHeight = windowHeight - headerDropdown;
+      $(".header .tab-dropdown .dropdown .dropdown-menu").css({ "max-height": finalHeight, "top": " " });
+    }
+  })
 
   if ($(window).width() >= 991) {
     $(".hover-menu-item #overview-links").addClass("d-block")
@@ -488,45 +408,12 @@ $(window).resize(function () {
     $(".menu-wrapper").removeClass("onhover-wrapper");
   }
 
-  $(".onhover-wrapper").hover(function () {
-    if ($(window).width() >= 991) {
-      $(this).find(".submenu-wrap").addClass("d-block")
-      $('.menu-wrapper .submenu-wrap').removeAttr('style')
-      $('.menu-wrapper .submenu-item').removeAttr('style')
-    }
-  }, function () {
-    if ($(window).width() >= 991) {
-      $(this).find(".submenu-wrap").removeClass("d-block")
-    }
-  })
-
   if ($(window).width() >= 991) {
     $(".header .super-nav .container .menu-tab").removeAttr("style")
     $(".header .super-nav .container .search-box").removeAttr("style")
     $(".main-container").css("margin-top", "145px")
   } else {
     $(".main-container").css("margin-top", "115px")
-  }
-
-  if ($(window).width() >= 991) {
-    // onHover();
-
-    $(".item-heading").on('click', function () {
-      $(".item-heading").removeClass("menu-display")
-      $(".submenu-item-wrap").removeClass("submenu-display")
-      $(this).addClass("menu-display")
-      $(this).siblings().addClass("submenu-display");
-    })
-  } else {
-    $(".item-heading").hover(function () {
-      $(this).siblings().removeClass("d-block")
-      $(".active-menu-wrap").removeClass("d-none")
-    })
-    $(".item-heading").off('click')
-
-    $(".menu-item li .overview-link").hover(function () {
-      $(this).siblings(".active-menu-wrap").addClass("d-block");
-    })
   }
 })
 
