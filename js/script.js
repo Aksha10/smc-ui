@@ -202,7 +202,7 @@ $(document).ready(function () {
         $(".main-container").animate({ marginTop: 170 })
       } else {
         $(".tab-dropdown").animate({ marginTop: 0 })
-        $(".main-container").animate({ marginTop: 115 })
+        $(".main-container").animate({ marginTop: 122 })
       }
     }
   })
@@ -334,14 +334,20 @@ $(document).ready(function () {
   })
 
   $(".header .tab-dropdown .dropdown").on('click', function () {
-    if ($(window).height() <= 420) {
-      var windowHeight = $(window).height();
-      var headerHeight = $(".header").height();
-      var dropdownHeight = $(".tab-dropdown").height();
-      var headerDropdown = headerHeight + dropdownHeight;
-      var finalHeight = windowHeight - headerDropdown;
-      $(".header .tab-dropdown .dropdown .dropdown-menu").css({ "max-height": finalHeight, top: '' });
-    }
+    var windowHeight = $(window).height();
+    var headerHeight = $(".header").height();
+    var dropdownHeight = $(".tab-dropdown").height();
+    var headerDropdown = headerHeight + dropdownHeight;
+    var finalHeight = windowHeight - headerDropdown;
+    $(".header .tab-dropdown .dropdown .dropdown-menu").css({ "max-height": finalHeight });
+  })
+
+  $(".header .super-nav .container .toggle-menu").on('click', function () {
+    var win_height = $(window).height();
+    var mobile_header = $(".mobile-header").height();
+    var menu_height = win_height - mobile_header;
+    console.log(menu_height);
+    $(".header .super-nav .container .menu-tab .menu").css({ "max-height": menu_height });
   })
 });
 
@@ -371,16 +377,12 @@ function activeTab() {
 
 $(window).resize(function () {
 
-  $(".header .tab-dropdown .dropdown").on('click', function () {
-    if ($(window).height() <= 420) {
-      var windowHeight = $(window).height();
-      var headerHeight = $(".header").height();
-      var dropdownHeight = $(".tab-dropdown").height();
-      var headerDropdown = headerHeight + dropdownHeight;
-      var finalHeight = windowHeight - headerDropdown;
-      $(".header .tab-dropdown .dropdown .dropdown-menu").css({ "max-height": finalHeight, "top": " " });
-    }
-  })
+  $(".header .super-nav .container .menu-tab").removeAttr("style")
+
+  $(".header .tab-dropdown .dropdown .dropdown-menu").removeClass("show")
+
+  $(".header .tab-dropdown .dropdown .dropdown-menu").removeAttr("style")
+
 
   if ($(window).width() >= 991) {
     $(".hover-menu-item #overview-links").addClass("d-block")
