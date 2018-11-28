@@ -225,12 +225,12 @@ $(document).ready(function () {
 
   $(".dropdown-item").on('click', function () {
     var itemText = $(this).text();
-    $(".tab-dropdown .dropdown #dropdownMenuLink .text").html(itemText);
+    $(".tab-dropdown .dropdown #dropdownMenuLink .text").text(itemText);
   });
 
   $(".secondary-nav .nav .nav-item a").on('click', function () {
     var tabText = $(this).text();
-    $(".tab-dropdown .dropdown #dropdownMenuLink .text").html(tabText);
+    $(".tab-dropdown .dropdown #dropdownMenuLink .text").text(tabText);
   })
 
   // =======================================================
@@ -242,7 +242,7 @@ $(document).ready(function () {
     var dropdownHref = $(this).attr('href');
     var dropdownText = $(this).text();
     if (windowHref == dropdownHref) {
-      $(".dropdown-toggle .text").html(dropdownText)
+      $(".dropdown-toggle .text").text(dropdownText)
     }
   })
 
@@ -333,12 +333,13 @@ $(document).ready(function () {
     $(this).parent().prev().toggleClass("active")
   })
 
-  $(".header .tab-dropdown .dropdown").on('click', function () {
+  $(".header .tab-dropdown .dropdown a").on('click', function () {
+    console.log("click")
     var windowHeight = $(window).height();
     var headerHeight = $(".header").height();
     var dropdownHeight = $(".tab-dropdown").height();
     var headerDropdown = headerHeight + dropdownHeight;
-    var finalHeight = windowHeight - headerDropdown;
+    var finalHeight = windowHeight - headerDropdown - 15;
     $(".header .tab-dropdown .dropdown .dropdown-menu").css({ "max-height": finalHeight });
   })
 
@@ -349,6 +350,7 @@ $(document).ready(function () {
     console.log(menu_height);
     $(".header .super-nav .container .menu-tab .menu").css({ "max-height": menu_height });
   })
+
 });
 
 // =========================================================
@@ -381,9 +383,6 @@ $(window).resize(function () {
 
   $(".header .tab-dropdown .dropdown .dropdown-menu").removeClass("show")
 
-  $(".header .tab-dropdown .dropdown .dropdown-menu").removeAttr("style")
-
-
   if ($(window).width() >= 991) {
     $(".hover-menu-item #overview-links").addClass("d-block")
   } else {
@@ -415,7 +414,7 @@ $(window).resize(function () {
     $(".header .super-nav .container .search-box").removeAttr("style")
     $(".main-container").css("margin-top", "145px")
   } else {
-    $(".main-container").css("margin-top", "115px")
+    $(".main-container").css("margin-top", "122px")
   }
 })
 
