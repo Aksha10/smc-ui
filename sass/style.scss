@@ -104,11 +104,11 @@
                 }
                 .header-main-menu {
                   li {
-                    a {
-                      &:focus {
-                        color: #64a7d2;
-                      }
-                    }
+                    // a {
+                    //   &:focus {
+                    //     color: #64a7d2;
+                    //   }
+                    // }
                     &:hover {
                       a {
                         color: #64a7d2;

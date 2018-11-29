@@ -124,10 +124,6 @@
 .header .super-nav .container .menu-tab .menu .submenu-wrap .container .menu-item li:hover {
   background-color: transparent;
 }
-/* line 108, ../sass/style.scss */
-.header .super-nav .container .menu-tab .menu .submenu-wrap .container .menu-item .header-main-menu li a:focus {
-  color: #64a7d2;
-}
 /* line 113, ../sass/style.scss */
 .header .super-nav .container .menu-tab .menu .submenu-wrap .container .menu-item .header-main-menu li:hover a {
   color: #64a7d2;

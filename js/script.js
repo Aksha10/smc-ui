@@ -4,8 +4,6 @@ $(document).ready(function () {
 
   activeTab();
 
-
-
   $('.nav-item a').on('click', function () {
     $('.nav-item').css('padding', "5px 10px")
     $('.nav-item:first-child').css("padding-left", "0")
@@ -33,7 +31,6 @@ $(document).ready(function () {
     $(this).parent().siblings('.expand-view').slideToggle();
     $('.arrow').toggleClass('fa-angle-down fa-angle-up')
   });
-
 
   // =========================================================
   // Change Plus and minus icon on button click
@@ -288,35 +285,36 @@ $(document).ready(function () {
     }
   })
 
-  $('.menu-item').mouseleave(function () {
-    if ($(window).width() >= 991) {
-      $(this).parents(".submenu-wrap").removeClass("d-block")
-      $(".hover-menu-item li").removeClass("d-block")
-      $(".hover-menu-item #overview-links").addClass("d-block")
-      $(".overview-active").addClass("active")
-    }
-  })
+  // $('.menu-item').mouseleave(function () {
+  //   if ($(window).width() >= 991) {
+  //     $(this).parents(".submenu-wrap").removeClass("d-block")
+  //     $(".hover-menu-item li").removeClass("d-block")
+  //     $(".hover-menu-item #overview-links").addClass("d-block")
+  //     $(".overview-active").addClass("active")
+  //     window.location.hash = '';
+  //   }
+  // })
 
   if ($(window).width() >= 991) {
     $(".hover-menu-item #overview-links").addClass("d-block")
   }
 
-  $(".header-main-menu li").hover(function () {
-    if ($(window).width() >= 991) {
-      $(".overview-active").removeClass("active")
-      var onhoverHref = $(this).children().attr("href").substr(1)
+  // $(".header-main-menu li").hover(function () {
+  //   if ($(window).width() >= 991) {
+  //     $(".overview-active").removeClass("active")
+  //     var onhoverHref = $(this).children().attr("href").substr(1)
 
-      $(".hover-menu-item li").each(function () {
-        var onhoverID = $(this).attr("id")
+  //     $(".hover-menu-item li").each(function () {
+  //       var onhoverID = $(this).attr("id")
 
-        if (onhoverHref == onhoverID) {
-          $(this).addClass("d-block")
-        } else {
-          $(this).removeClass("d-block")
-        }
-      })
-    }
-  });
+  //       if (onhoverHref == onhoverID) {
+  //         $(this).addClass("d-block")
+  //       } else {
+  //         $(this).removeClass("d-block")
+  //       }
+  //     })
+  //   }
+  // });
 
   if ($(window).width() <= 991) {
     $(".submenu-wrap .menu-item .submenu-item").removeClass("col-sm-4")
@@ -351,6 +349,31 @@ $(document).ready(function () {
     $(".header .super-nav .container .menu-tab .menu").css({ "max-height": menu_height });
   })
 
+  $(".submenu-wrap .menu-item li a").on('click', function () {
+    var link_href = $(this).attr("href").substr(1)
+
+    $(".submenu-wrap .menu-item li a").removeClass("overview-active");
+    $(this).addClass("overview-active");
+
+    $(".hover-menu-item li").each(function () {
+      debugger
+      var link_id = $(this).attr("id")
+      if (link_href == link_id) {
+        $(".hover-menu-item li").removeClass("d-block")
+        console.log($(this).addClass("d-block"), "====================")
+        $(this).css('display', 'block')
+        console.log("match")
+      } else {
+        console.log("not match");
+      }
+    })
+  })
+
+  // $(".submenu-item .header-main-menu").mousleave(function () {
+  //   if($(".header-main-menu li a").hasClass("overview-active")) {
+  //     $(this)
+  //   }
+  // })
 });
 
 // =========================================================
